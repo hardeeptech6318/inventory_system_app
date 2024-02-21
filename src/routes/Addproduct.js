@@ -24,7 +24,7 @@ function Addproduct() {
       });
       
 
-      const { register, handleSubmit, reset,formState:{ errors } } = useForm({
+      const { register, handleSubmit, reset,formState:{ errors ,isSubmitting} } = useForm({
         resolver: yupResolver(schema)
       });
 
@@ -148,7 +148,7 @@ function Addproduct() {
       
       
 <div className=' col-span-2'>
-      <Button><input type="submit" /></Button>
+<Button disabled={isSubmitting} >{isSubmitting ? 'Submitting': <input type="submit" />} </Button>
       </div>
     </form>
     </section>
