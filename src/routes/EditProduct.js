@@ -62,7 +62,7 @@ fetchdata()
           formData.append('image', data.image[0]);
         }
         
-        const response = await axios.put(`${process.env.REACT_APP_APIURL}/addproduct`, formData, {
+        const response = await axios.put(`${process.env.REACT_APP_APIURL}addproduct`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
@@ -149,7 +149,7 @@ fetchdata()
     onChange: (e) => {handleFileInputChange(e)},
     
   })} helperText="Please enter a product image" />
-      <img  src={imagePreview==null ?`${initialData.image}` :imagePreview}  alt='product'/>
+      <img  src={imagePreview==null ?`${process.env.REACT_APP_APIURL}uploads/${initialData.image}` :imagePreview}  alt='product'/>
     
     </div>
 
